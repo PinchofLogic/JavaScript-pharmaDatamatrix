@@ -20,6 +20,14 @@ export default function GTIN(barcode) {
                 else
                     barcode = null;
             }
+            else if(barcode.slice(0,2) === "11"){
+                result['PROD DATE'] = barcode.slice(2,8);
+                if(barcode.length > 8) {
+                    barcode = barcode.slice(8)
+                }
+                else
+                    barcode = null;
+            }
             else if(barcode.slice(0,2) === "10"){
                 if (barcode.includes(GS)){
                    index = barcode.indexOf(GS);
